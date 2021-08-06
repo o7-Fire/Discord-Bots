@@ -29,7 +29,7 @@ async def on_message(message):
 	if client.user.mentioned_in(message):
 		if latestping == message.author.id and (time.time() - latestpingtime) < 5:
 			if (time.time() - alreadysenttime) < 5 and latestping == message.author.id:
-				await webhooksend(f"<Hey! Someone pinged you a lot of times.\nhttps://ptb.discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}")
+				await webhooksend(f"Hey! Someone pinged you a lot of times.\nhttps://ptb.discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}")
 			else:
 				await webhooksend(f"<@{client.user.id}> Hey! Someone pinged you a lot of times.\nhttps://ptb.discord.com/channels/{message.guild.id}/{message.channel.id}/{message.id}")
 			alreadysenttime = time.time()
