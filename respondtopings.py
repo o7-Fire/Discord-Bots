@@ -1,3 +1,6 @@
+# this responds to pings instantly and pings you in a seperate server for you to respond yourself
+# not sure purpose
+
 import discord
 import random
 import time
