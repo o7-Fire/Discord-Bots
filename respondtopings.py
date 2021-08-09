@@ -55,37 +55,37 @@ async def on_message(message):
   if mode == 0:
     if latestping == message.author.id and (time.time() - latestpingtime) < 5:
       if (time.time() - alreadysenttime) < 5 and latestping == message.author.id:
-        sendformat(True, False)
+        sendformat(message, True, False)
       else:
-        sendformat(True, True)
+        sendformat(message, True, True)
       alreadysenttime = time.time()
     else:
       await message.channel.send(".")
-      sendformat(False, True)
+      sendformat(message, False, True)
     latestping = message.author.id
     latestpingtime = time.time()
   elif mode == 1:
     await message.ack()
     if latestping == message.author.id and (time.time() - latestpingtime) < 5:
       if (time.time() - alreadysenttime) < 5 and latestping == message.author.id:
-        sendformat(True, False)
+        sendformat(message, True, False)
       else:
-        sendformat(True, True)
+        sendformat(message, True, True)
       alreadysenttime = time.time()
     else:
-      sendformat(False, False)
+      sendformat(message, False, False)
     latestping = message.author.id
     latestpingtime = time.time()
   elif mode == 2:
     if latestping == message.author.id and (time.time() - latestpingtime) < 5:
       if (time.time() - alreadysenttime) < 5 and latestping == message.author.id:
-        sendformat(True, False)
+        sendformat(message, True, False)
       else:
-        sendformat(True, True)
+        sendformat(message, True, True)
       alreadysenttime = time.time()
     else:
       await message.channel.send(f"<@{message.author.id}>")
-      sendformat(False, False)
+      sendformat(message, False, False)
     latestping = message.author.id
     latestpingtime = time.time()
 
