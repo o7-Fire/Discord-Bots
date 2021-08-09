@@ -1,2 +1,2 @@
 # Discord-Bots
-meant for public since people have a use for it too
+meant for public since people have a use for it too.
