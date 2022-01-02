@@ -9,7 +9,7 @@ import threading
 TOKEN = ""
 client = discord.Client()
 val = 0
-whitelisted = [854577311810060288, 450360653094584340, 394771663155101727, 761484355084222464, 710316824797118544, 829381385801957397] #dont want your pc to get hijacked
+WHITELIST = os.environ['WHITELIST'] #dont want your pc to get hijacked
 
 def preventinfiniteloop():
   didthecommandwork = 0
@@ -47,7 +47,7 @@ async def on_message(message):
     return
   if message.content == "test":
     await message.channel.send("yeah im alive")
-  if message.author.id in whitelisted:
+  if message.author.id in WHITELIST:
     nothingsdu8infgevusybt = 0
   else:
     return
